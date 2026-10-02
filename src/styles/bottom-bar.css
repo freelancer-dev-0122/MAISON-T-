@@ -1,0 +1,328 @@
+/* ─────────────────────────────────────────────
+   MAISON ÉTÉ  ·  Bottom Bar (190px)
+   ───────────────────────────────────────────── */
+
+#bottom-bar {
+  position: relative;
+  width: 100%;
+  height: var(--bar-h);
+  display: flex;
+  z-index: var(--z-bar);
+  opacity: 0;   /* animated in after loader */
+  will-change: opacity;
+}
+
+/* ── LEFT — cream panel ─────────────────────── */
+
+.bar__left {
+  flex: 0 0 55%;
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--edge) 0 var(--edge);
+  gap: var(--sp-2);
+}
+
+.bar__left-label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.55;
+}
+
+/* Booking strip */
+.booking-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  height: 48px;
+  background: var(--cream);
+}
+
+.booking-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--sp-2);
+  min-width: 0;
+  position: relative;
+}
+
+.booking-field + .booking-field {
+  border-left: 1px solid var(--border);
+}
+
+.booking-field label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.45;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.booking-field input,
+.booking-field select {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--olive);
+  cursor: none;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  line-height: 1.2;
+}
+
+.booking-field input::placeholder {
+  color: var(--olive);
+  opacity: 0.55;
+}
+
+.booking-btn {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--sp-3);
+  background: var(--terracotta);
+  color: var(--cream);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin: 4px;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+.booking-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.12);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.booking-btn:hover::before {
+  opacity: 1;
+}
+
+/* ── RIGHT — olive panel ─────────────────────── */
+
+.bar__right {
+  flex: 1;
+  background: var(--olive);
+  border-top: 1px solid rgba(244, 239, 230, 0.12);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--sp-4) 0 var(--sp-5);
+  gap: var(--sp-5);
+  justify-content: space-between;
+}
+
+/* Stats group */
+.bar__stats {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-5);
+  flex: 1;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  color: var(--cream);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+/* Odometer digit */
+.odometer-digit {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1em;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.odometer-digit__inner {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.stat__label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  opacity: 0.5;
+}
+
+/* Divider between stats */
+.stat + .stat {
+  padding-left: var(--sp-5);
+  border-left: 1px solid rgba(244, 239, 230, 0.12);
+}
+
+/* ── Thumbnail buttons ───────────────────────── */
+
+.bar__thumbs {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+.thumb-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(244, 239, 230, 0.3);
+  cursor: none;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 0.3s, transform 0.3s var(--ease-out);
+}
+
+.thumb-btn:hover {
+  border-color: var(--cream);
+  transform: scale(1.08);
+}
+
+.thumb-btn img,
+.thumb-btn .thumb-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-btn .thumb-placeholder {
+  background: var(--bone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.6;
+  text-align: center;
+  padding: 4px;
+}
+
+/* Active state */
+.thumb-btn.is-active {
+  border-color: var(--cream);
+  box-shadow: 0 0 0 2px rgba(244, 239, 230, 0.4);
+}
+
+/* ── Responsive adjustments ─────────────────── */
+
+@media (max-width: 900px) {
+  #bottom-bar {
+    flex-direction: column;
+    height: auto;
+  }
+  .bar__left,
+  .bar__right {
+    flex: none;
+    width: 100%;
+    padding: var(--sp-3) var(--edge);
+  }
+  .bar__left { min-height: auto; }
+  .bar__right {
+    min-height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .bar__stats { gap: var(--sp-4); flex-wrap: wrap; }
+  .stat + .stat { padding-left: var(--sp-4); }
+  .thumb-btn,
+  .booking-btn,
+  .booking-field input,
+  .booking-field select {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 600px) {
+  .booking-strip {
+    flex-direction: column;
+    border-radius: 16px;
+    height: auto;
+    padding: var(--sp-1);
+    gap: 4px;
+  }
+  .booking-field {
+    padding: 0.6rem 0.85rem;
+    min-height: 48px;
+    border-left: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .booking-field:last-of-type {
+    border-bottom: none;
+  }
+  .booking-btn {
+    width: 100%;
+    margin: 4px 0 0 0;
+    border-radius: 999px;
+    min-height: 44px;
+    padding: 0.75rem;
+  }
+  .bar__right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-3);
+  }
+  .bar__stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3);
+  }
+  .stat + .stat {
+    padding-left: 0;
+    border-left: none;
+  }
+  .bar__thumbs {
+    width: 100%;
+    justify-content: flex-start;
+    padding-top: var(--sp-1);
+  }
+}

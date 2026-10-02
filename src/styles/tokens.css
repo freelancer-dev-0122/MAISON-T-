@@ -1,0 +1,56 @@
+/* ─────────────────────────────────────────────
+   MAISON ÉTÉ  ·  Design Tokens
+   ───────────────────────────────────────────── */
+
+:root {
+  /* Palette */
+  --cream:      #F4EFE6;
+  --bone:       #E8E0D2;
+  --olive:      #2F3A2A;
+  --terracotta: #B8553A;
+
+  /* Derived / semantic */
+  --bg:         var(--cream);
+  --fg:         var(--olive);
+  --border:     rgba(47, 58, 42, 0.15);  /* 15% olive */
+
+  /* Typography */
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter Tight', 'Inter', system-ui, sans-serif;
+
+  /* Fluid type scale (clamp) */
+  --text-xs:   clamp(0.625rem, 0.55rem + 0.33vw, 0.75rem);
+  --text-sm:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-base: clamp(0.9375rem,0.875rem + 0.31vw, 1.0625rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.625vw,1.375rem);
+  --text-xl:   clamp(1.375rem, 1.125rem+ 1.25vw, 2rem);
+  --text-2xl:  clamp(1.75rem,  1.25rem + 2.5vw,  3rem);
+  --text-hero: clamp(3.5rem,   2rem    + 8vw,     10rem);  /* fitted by JS */
+
+  /* Spacing – 8px grid */
+  --sp-1:  0.5rem;   /*  8px */
+  --sp-2:  1rem;     /* 16px */
+  --sp-3:  1.5rem;   /* 24px */
+  --sp-4:  2rem;     /* 32px */
+  --sp-5:  2.5rem;   /* 40px */
+  --sp-6:  3rem;     /* 48px */
+  --sp-8:  4rem;     /* 64px */
+  --sp-10: 5rem;     /* 80px */
+  --sp-12: 6rem;     /* 96px */
+
+  /* Layout */
+  --nav-h:     72px;
+  --bar-h:     190px;
+  --hero-h:    calc(100svh - var(--bar-h));
+  --edge:      clamp(1rem, 2.5vw, 3rem);   /* horizontal page margin */
+
+  /* Motion */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Layers */
+  --z-loader:  1000;
+  --z-cursor:   950;
+  --z-nav:      900;
+  --z-bar:       10;
+}

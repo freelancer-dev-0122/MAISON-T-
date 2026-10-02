@@ -1,0 +1,501 @@
+/* ─────────────────────────────────────────────
+   MAISON ÉTÉ  ·  The Story Section
+   ───────────────────────────────────────────── */
+
+/* ══════════════════════════════════════════════
+   PART A — PINNED ARCH REVEAL
+   Outer scroll track: 300vh of scroll space.
+   The pinned scene is sticky inside it.
+   No overflow hidden / transform on this wrapper.
+   ══════════════════════════════════════════════ */
+
+#story {
+  position: relative;
+  background: var(--cream);
+}
+
+/* The scrollable track that gives the pin its scroll space.
+   height is set in JS (300vh desktop / 220vh mobile).
+   NO overflow hidden here — ScrollTrigger requirement. */
+.story__pin-track {
+  position: relative;
+  background: var(--cream);
+  /* height set via JS / inline style to stay accurate on resize */
+  height: 300vh;
+}
+
+/* The pinned scene — ScrollTrigger.pin handles position.
+   Do NOT set position:sticky here; that conflicts with GSAP pin. */
+.story__pin-scene {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;   /* clips image/mask — OK, this is not a pin ancestor */
+  background: var(--cream);
+}
+
+/* ── Background words ─────────────────────────── */
+
+.story__bg-words {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(2rem, 5vw, 6rem);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story__bg-word {
+  font-family: var(--font-display);
+  font-size: clamp(7rem, 14vw, 16rem);
+  font-weight: 300;
+  font-style: italic;
+  font-optical-sizing: auto;
+  color: var(--olive);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  will-change: transform, opacity;
+  white-space: nowrap;
+}
+
+/* ── Arch labels ──────────────────────────────── */
+
+.story__arch-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.story__arch-label {
+  position: absolute;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive);
+  will-change: opacity;
+}
+
+.story__arch-label--tl { top: 18%;  left:  clamp(1rem, 8vw, 9rem); }
+.story__arch-label--tr { top: 18%;  right: clamp(1rem, 8vw, 9rem); }
+.story__arch-label--bc { bottom: 19%; left: 50%; transform: translateX(-50%); }
+
+/* ── Image & mask ────────────────────────────── */
+
+.story__arch-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* clip-path animates via GSAP — start as arch */
+  clip-path: inset(16% 33% 16% 33% round 999px 999px 0 0);
+  will-change: clip-path;
+}
+
+.story__arch-img,
+.story__arch-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* scale animates from 1.35 → 1 */
+  transform: scale(1.35);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.story__arch-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bone);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.5;
+}
+
+/* Scrim that fades in at ~70% */
+.story__arch-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 58, 42, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* Caption — appears at ~70% of timeline */
+.story__arch-caption {
+  position: absolute;
+  bottom: clamp(2rem, 5vh, 4rem);
+  left: clamp(1.5rem, 4vw, 4rem);
+  z-index: 1;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.story__arch-caption-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  font-optical-sizing: auto;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  overflow: hidden;
+  display: block;
+}
+
+.story__arch-caption-text .char {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* ══════════════════════════════════════════════
+   PART B — EDITORIAL STORY
+   Normal flow, cream background, 12-col grid
+   ══════════════════════════════════════════════ */
+
+.story__editorial {
+  background: var(--cream);
+  padding: 140px var(--edge);
+}
+
+.story__editorial-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0 clamp(1rem, 2.5vw, 2rem);
+}
+
+/* ── Left: label + scrubbed paragraph ─────── */
+
+.story__edit-left {
+  grid-column: 1 / 6;
+  position: relative;
+}
+
+.story__edit-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.5;
+  margin-bottom: clamp(2rem, 4vh, 3.5rem);
+  display: block;
+}
+
+.story__edit-para {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.2vw, 3.25rem);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  color: var(--olive);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* Each word-wrap used for the scrub reveal — DO NOT add overflow:hidden here,
+   it's added programmatically by splitWords.
+   Individual .word spans start at opacity 0.2 and animate to 1. */
+.story__edit-para .word {
+  opacity: 0.2;
+  will-change: opacity;
+}
+
+/* ── Right: two images offset ──────────────── */
+
+.story__edit-right {
+  grid-column: 7 / 13;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vw, 4rem);
+  padding-top: clamp(3rem, 8vh, 7rem); /* vertical offset */
+}
+
+.story__img-block {
+  position: relative;
+  overflow: hidden;   /* clip for reveal — OK, not a pin ancestor */
+}
+
+.story__img-block--tall {
+  aspect-ratio: 4 / 5;
+  align-self: flex-start;
+  width: 78%;
+}
+
+.story__img-block--wide {
+  aspect-ratio: 3 / 2;
+  align-self: flex-end;
+  width: 88%;
+  margin-top: -5%;
+}
+
+.story__img-block img,
+.story__img-block-placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  will-change: transform;
+}
+
+.story__img-block-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bone);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.5;
+}
+
+/* Image caption */
+.story__img-caption {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  font-style: italic;
+  font-optical-sizing: auto;
+  color: var(--olive);
+  opacity: 0.55;
+  margin-top: var(--sp-2);
+  letter-spacing: 0.01em;
+}
+
+/* ── Stats row ─────────────────────────────── */
+
+.story__stats-row {
+  grid-column: 1 / 13;
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: clamp(5rem, 10vh, 8rem);
+  border-top: 1px solid var(--border);
+  padding-top: clamp(2.5rem, 5vh, 4rem);
+}
+
+.story__stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding-right: clamp(1rem, 3vw, 3rem);
+}
+
+.story__stat + .story__stat {
+  padding-left: clamp(1rem, 3vw, 3rem);
+  padding-right: clamp(1rem, 3vw, 3rem);
+  border-left: 1px solid var(--border);
+}
+
+.story__stat-value {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  color: var(--olive);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.story__stat-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--olive);
+  opacity: 0.45;
+}
+
+/* ── Circular CTA button ──────────────────── */
+
+.story__cta-wrap {
+  grid-column: 1 / 13;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: clamp(3rem, 6vh, 5rem);
+}
+
+.story__cta {
+  position: relative;
+  width: clamp(120px, 14vw, 168px);
+  height: clamp(120px, 14vw, 168px);
+  border-radius: 50%;
+  background: var(--terracotta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  will-change: transform;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Inner label */
+.story__cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  z-index: 1;
+}
+
+.story__cta-text {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  pointer-events: none;
+}
+
+.story__cta-arrow {
+  font-size: 1.1rem;
+  color: var(--cream);
+  pointer-events: none;
+}
+
+/* Rotating SVG ring */
+.story__cta-ring {
+  position: absolute;
+  inset: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  animation: rotateRing 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateRing {
+  to { transform: rotate(360deg); }
+}
+
+.story__cta:hover .story__cta-ring {
+  animation-duration: 5s;
+}
+
+.story__cta-ring textPath {
+  fill: var(--olive);
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ─────────────────────────────── */
+
+@media (max-width: 900px) {
+  .story__pin-track {
+    height: 220vh;
+  }
+
+  .story__arch-wrap {
+    clip-path: inset(14% 12% 14% 12% round 999px 999px 0 0);
+  }
+
+  .story__bg-word {
+    font-size: clamp(4rem, 12vw, 8rem);
+  }
+
+  .story__editorial {
+    padding: 80px var(--edge);
+  }
+
+  .story__editorial-inner {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3rem, 7vh, 5rem);
+  }
+
+  .story__edit-left,
+  .story__edit-right {
+    width: 100%;
+  }
+
+  .story__img-block--tall { width: 100%; }
+  .story__img-block--wide { width: 100%; margin-top: 0; }
+
+  .story__stats-row {
+    flex-direction: column;
+    gap: var(--sp-4);
+  }
+
+  .story__stat + .story__stat {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-top: var(--sp-4);
+  }
+
+  .story__cta-wrap {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .story__bg-word {
+    font-size: clamp(3rem, 15vw, 6rem);
+  }
+
+  .story__arch-label {
+    font-size: 9px;
+  }
+
+  .story__arch-label--tl { top: 16%; left: 1rem; }
+  .story__arch-label--tr { top: 16%; right: 1rem; }
+  .story__arch-label--bc { bottom: 17%; }
+}
+
+/* ── Reduced motion ──────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .story__arch-wrap {
+    clip-path: inset(0% 0% 0% 0% round 0) !important;
+  }
+
+  .story__arch-img,
+  .story__arch-placeholder {
+    transform: scale(1) !important;
+  }
+
+  .story__bg-word {
+    opacity: 0 !important;
+  }
+
+  .story__arch-scrim {
+    opacity: 1 !important;
+  }
+
+  .story__arch-caption {
+    opacity: 1 !important;
+  }
+
+  .story__edit-para .word {
+    opacity: 1 !important;
+  }
+
+  .story__cta-ring {
+    animation: none;
+  }
+}

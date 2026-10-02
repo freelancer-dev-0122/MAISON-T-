@@ -1,0 +1,87 @@
+/* ─────────────────────────────────────────────
+   MAISON ÉTÉ  ·  Marquee Section
+   Palette: cream #F4EFE6 background, olive #2F3A2A text, terracotta #B8553A bullets
+   Two stacked rows: Row 1 filled italic, Row 2 outlined italic
+   Normal flow, not pinned
+   ───────────────────────────────────────────── */
+
+#marquee-section {
+  background: var(--cream);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  user-select: none;
+  z-index: 10;
+}
+
+.marquee__row {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marquee__track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.marquee__content {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee__phrase {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  font-weight: 300;
+  font-style: italic;
+  font-optical-sizing: auto;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* Row 1: Filled olive words */
+.marquee__row--filled .marquee__phrase {
+  color: var(--olive);
+}
+
+/* Row 2: 1px olive outlined text */
+.marquee__row--outlined .marquee__phrase {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--olive);
+}
+
+/* Terracotta bullets */
+.marquee__bullet {
+  color: var(--terracotta);
+  -webkit-text-stroke: 0 !important;
+  font-style: normal;
+  display: inline-block;
+  padding: 0 clamp(1rem, 2.5vw, 2.5rem);
+  font-size: 0.65em;
+  vertical-align: middle;
+}
+
+/* Hover pause */
+.marquee__row:hover .marquee__track {
+  cursor: default;
+}
+
+/* ── Reduced Motion ─────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    transform: none !important;
+  }
+}

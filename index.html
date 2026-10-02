@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Été — A quiet house between the olive groves and the sea. A premium boutique hotel in Provence, France. Est. 1924." />
+  <meta name="theme-color" content="#4A4C3E" />
+
+  <title>Maison Été — Boutique Hotel, Provence</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph & Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maison Été — Boutique Hotel, Provence" />
+  <meta property="og:description" content="A quiet house between the olive groves and the sea. A boutique hotel in Provence, France. Est. 1924." />
+  <meta property="og:image" content="/src/assets/img/hero.jpg" />
+  <meta property="og:url" content="https://maison-ete.com/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Maison Été — Boutique Hotel, Provence" />
+  <meta name="twitter:description" content="A quiet house between the olive groves and the sea. A boutique hotel in Provence, France. Est. 1924." />
+  <meta name="twitter:image" content="/src/assets/img/hero.jpg" />
+
+  <!-- JSON-LD Hotel structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Hotel",
+    "name": "Maison Été",
+    "description": "A quiet house between the olive groves and the sea. A boutique hotel in Provence, France. Est. 1924.",
+    "image": "/src/assets/img/hero.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Route des Oliviers",
+      "addressLocality": "Gordes",
+      "postalCode": "84220",
+      "addressRegion": "Provence",
+      "addressCountry": "FR"
+    },
+    "priceRange": "€390 - €520",
+    "telephone": "+33490720000",
+    "email": "bonjour@maison-ete.com"
+  }
+  </script>
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Fraunces (display) + Inter Tight (body) with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" href="/src/assets/img/hero.webp" type="image/webp" />
+
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+  <!-- Skip-to-content accessibility link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════
+       CURSOR
+  ═══════════════════════════════════════════ -->
+  <div id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"></div>
+    <div class="cursor__label"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       LOADER
+  ═══════════════════════════════════════════ -->
+  <div id="loader" role="status" aria-label="Loading Maison Été">
+    <p class="loader__wordmark">Maison Été</p>
+
+    <div class="loader__progress-track" aria-hidden="true">
+      <div class="loader__progress-fill"></div>
+    </div>
+
+    <span class="loader__pct" aria-hidden="true">0%</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════════ -->
+  <header class="site-header">
+    <nav id="nav" role="navigation" aria-label="Main navigation">
+
+      <!-- Left pill — wordmark + links + mobile menu button -->
+      <div class="nav__pill">
+        <a href="/" class="nav__wordmark" aria-label="Maison Été — Home">Maison Été</a>
+        <ul class="nav__links" role="list">
+          <li><a href="#suites"       data-cursor="view">Rooms</a></li>
+          <li><a href="#experiences" data-cursor="view">Experiences</a></li>
+          <li><a href="#story"       data-cursor="view">Story</a></li>
+        </ul>
+        <button
+          id="nav-menu-btn"
+          class="nav__menu-btn"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <span>Menu</span>
+        </button>
+      </div>
+
+      <!-- Right — reserve pill -->
+      <div class="nav__right">
+        <a
+          href="#reserve"
+          id="nav-reserve"
+          class="nav__reserve"
+          data-magnetic
+          data-cursor="book"
+          aria-label="Reserve a room"
+        >
+          <span>Reserve ↗</span>
+        </a>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- Mobile navigation full-screen overlay -->
+  <div id="mobile-nav" class="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav__header">
+      <span class="mobile-nav__wordmark">Maison Été</span>
+      <button id="mobile-nav-close" type="button" class="mobile-nav__close" aria-label="Close navigation menu">✕</button>
+    </div>
+    <ul class="mobile-nav__links">
+      <li class="mobile-nav__item"><a href="#suites" class="mobile-nav__link">Rooms</a></li>
+      <li class="mobile-nav__item"><a href="#experiences" class="mobile-nav__link">Experiences</a></li>
+      <li class="mobile-nav__item"><a href="#story" class="mobile-nav__link">Story</a></li>
+      <li class="mobile-nav__item"><a href="#reserve" class="mobile-nav__link">Reserve</a></li>
+    </ul>
+    <div class="mobile-nav__footer">
+      <span>Route des Oliviers, 84220 Gordes</span>
+      <span>Est. 1924</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN CONTENT LANDMARK
+  ═══════════════════════════════════════════ -->
+  <main id="main-content" role="main">
+
+    <!-- ═══════════════════════════════════════════
+         HERO  (calc(100svh - 190px))
+    ═══════════════════════════════════════════ -->
+    <section id="hero" aria-label="Hero — Maison Été">
+
+      <!-- Full-bleed image -->
+      <div class="hero__img-wrap">
+        <picture class="hero__pic">
+          <source srcset="/src/assets/img/hero.webp" type="image/webp" />
+          <img
+            id="hero-img"
+            class="hero__img"
+            src="/src/assets/img/hero.jpg"
+            alt="Aerial view of Maison Été surrounded by olive groves in Provence"
+            width="1920"
+            height="1080"
+            loading="eager"
+            decoding="async"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+        </picture>
+        <div class="hero__img-placeholder" style="display:none;" aria-hidden="true">
+          hero.jpg
+        </div>
+      </div>
+
+      <!-- Dark scrim -->
+      <div class="hero__scrim" aria-hidden="true"></div>
+
+      <!-- Swap overlay -->
+      <div class="hero__swap-overlay" aria-hidden="true"></div>
+
+      <!-- EST. 1924 — top left -->
+      <div class="hero__label-tl label" aria-hidden="true">
+        EST. 1924
+      </div>
+
+      <!-- ↓ SCROLL TO EXPLORE — bottom right -->
+      <div class="hero__label-br label" aria-hidden="true">
+        ↓ Scroll to Explore
+      </div>
+
+      <!-- Main content area — title + tagline -->
+      <div class="hero__content">
+        <h1 class="hero__title" aria-label="Maison Été">MAISON ÉTÉ</h1>
+        <p class="hero__tagline">A quiet house between the olive groves and the sea.</p>
+      </div>
+
+    </section>
+
+  <!-- ═══════════════════════════════════════════
+       BOTTOM BAR  (190px)
+  ═══════════════════════════════════════════ -->
+  <div id="bottom-bar" role="complementary" aria-label="Booking and hotel stats">
+
+    <!-- LEFT — cream booking panel -->
+    <div class="bar__left">
+      <p class="bar__left-label">Check Availability</p>
+
+      <div class="booking-strip" role="form" aria-label="Room availability search">
+
+        <!-- Check-in -->
+        <div class="booking-field">
+          <label for="checkin">Check-in</label>
+          <input
+            id="checkin"
+            type="date"
+            aria-label="Check-in date"
+            placeholder="DD / MM / YYYY"
+          />
+        </div>
+
+        <!-- Check-out -->
+        <div class="booking-field">
+          <label for="checkout">Check-out</label>
+          <input
+            id="checkout"
+            type="date"
+            aria-label="Check-out date"
+            placeholder="DD / MM / YYYY"
+          />
+        </div>
+
+        <!-- Guests -->
+        <div class="booking-field">
+          <label for="guests">Guests</label>
+          <select id="guests" aria-label="Number of guests">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+          </select>
+        </div>
+
+        <!-- Search button -->
+        <button
+          id="booking-search"
+          class="booking-btn"
+          type="button"
+          aria-label="Search availability"
+          data-cursor="book"
+          data-magnetic
+        >
+          Search
+        </button>
+
+      </div>
+    </div>
+
+    <!-- RIGHT — olive stats panel -->
+    <div class="bar__right">
+
+      <!-- Stats -->
+      <div class="bar__stats" aria-label="Hotel highlights">
+
+        <div class="stat">
+          <div class="stat__value" data-value="24" aria-label="24 suites">24</div>
+          <div class="stat__label">Suites</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat__value" data-value="1924" aria-label="Established since 1924">1924</div>
+          <div class="stat__label">Since</div>
+        </div>
+
+        <div class="stat">
+          <div class="stat__value" data-value="4.9" aria-label="4.9 guest rating">4.9</div>
+          <div class="stat__label">Guest Rating</div>
+        </div>
+
+      </div>
+
+      <!-- Thumbnail image swap buttons -->
+      <div class="bar__thumbs" aria-label="View hotel spaces">
+
+        <button
+          class="thumb-btn"
+          type="button"
+          aria-label="View courtyard"
+          data-cursor="view"
+          data-src="/src/assets/img/courtyard.jpg"
+          title="Courtyard"
+        >
+          <img
+            src="/src/assets/img/courtyard.jpg"
+            alt="The Maison Été courtyard"
+            width="80"
+            height="80"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="thumb-placeholder" style="display:none;" aria-hidden="true">courtyard</div>
+        </button>
+
+        <button
+          class="thumb-btn"
+          type="button"
+          aria-label="View pool"
+          data-cursor="view"
+          data-src="/src/assets/img/pool.jpg"
+          title="Pool"
+        >
+          <img
+            src="/src/assets/img/pool.jpg"
+            alt="The Maison Été pool"
+            width="80"
+            height="80"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <div class="thumb-placeholder" style="display:none;" aria-hidden="true">pool</div>
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       THE STORY SECTION
+  ═══════════════════════════════════════════ -->
+  <section id="story" aria-label="The Story of Maison Été">
+
+    <!-- ──────────────────────────────────────────
+         PART A — Pinned arch reveal
+         .story__pin-track  = scroll space (300vh)
+         .story__pin-scene  = sticky viewport scene
+         No overflow:hidden / transform on track or #story
+    ─────────────────────────────────────────── -->
+    <div class="story__pin-track">
+
+      <div class="story__pin-scene" aria-hidden="false">
+
+        <!-- Background words (behind the arch) -->
+        <div class="story__bg-words" aria-hidden="true">
+          <span class="story__bg-word story__bg-word--left">A quiet</span>
+          <span class="story__bg-word story__bg-word--right">house</span>
+        </div>
+
+        <!-- Small arch labels -->
+        <div class="story__arch-labels" aria-hidden="true">
+          <span class="story__arch-label story__arch-label--tl">EST. 1924</span>
+          <span class="story__arch-label story__arch-label--tr">PROVENCE</span>
+          <span class="story__arch-label story__arch-label--bc">24 SUITES</span>
+        </div>
+
+        <!-- Arch-masked image + scrim + caption -->
+        <div class="story__arch-wrap">
+
+          <picture>
+            <source srcset="/src/assets/img/courtyard.webp" type="image/webp" />
+            <img
+              class="story__arch-img"
+              src="/src/assets/img/courtyard.jpg"
+              alt="The Maison Été courtyard framed in an arched window"
+              width="1200"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+          </picture>
+          <div class="story__arch-placeholder" style="display:none;" aria-hidden="true">
+            courtyard.jpg
+          </div>
+
+          <!-- Dark scrim (fades in at 70%) -->
+          <div class="story__arch-scrim" aria-hidden="true"></div>
+
+          <!-- Caption (appears at 70%) -->
+          <div class="story__arch-caption">
+            <span class="story__arch-caption-text">Where slow mornings begin.</span>
+          </div>
+
+        </div><!-- /.story__arch-wrap -->
+
+      </div><!-- /.story__pin-scene -->
+
+    </div><!-- /.story__pin-track -->
+
+    <!-- ──────────────────────────────────────────
+         PART B — Editorial story (normal flow)
+    ─────────────────────────────────────────── -->
+    <div class="story__editorial">
+      <div class="story__editorial-inner">
+
+        <!-- Left: label + scroll-scrubbed paragraph -->
+        <div class="story__edit-left">
+          <span class="story__edit-eyebrow">[ Our Story ]</span>
+
+          <p class="story__edit-para">
+            Maison Été began as a farmhouse in 1924. Today it holds twenty-four rooms, one long table, and a promise to keep the days unhurried.
+          </p>
+        </div>
+
+        <!-- Right: two offset images -->
+        <div class="story__edit-right">
+
+          <!-- Image 1: pool.jpg  4:5 tall -->
+          <div class="story__img-block story__img-block--tall">
+            <picture>
+              <source srcset="/src/assets/img/pool.webp" type="image/webp" />
+              <img
+                src="/src/assets/img/pool.jpg"
+                alt="The Maison Été pool at dusk"
+                width="640"
+                height="800"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </picture>
+            <div class="story__img-block-placeholder" style="display:none;" aria-hidden="true">pool.jpg</div>
+            <p class="story__img-caption">The pool at dusk</p>
+          </div>
+
+          <!-- Image 2: spa.jpg  3:2 wide -->
+          <div class="story__img-block story__img-block--wide">
+            <picture>
+              <source srcset="/src/assets/img/spa.webp" type="image/webp" />
+              <img
+                src="/src/assets/img/spa.jpg"
+                alt="The Maison Été quiet spa room"
+                width="800"
+                height="533"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+            </picture>
+            <div class="story__img-block-placeholder" style="display:none;" aria-hidden="true">spa.jpg</div>
+            <p class="story__img-caption">The quiet room</p>
+          </div>
+
+        </div><!-- /.story__edit-right -->
+
+        <!-- Stats row — full width -->
+        <div class="story__stats-row" aria-label="Hotel statistics">
+
+          <div class="story__stat">
+            <div class="story__stat-value" aria-label="24 suites">24</div>
+            <div class="story__stat-label">Suites</div>
+          </div>
+
+          <div class="story__stat">
+            <div class="story__stat-value" aria-label="100 years of hospitality">100</div>
+            <div class="story__stat-label">Years of hospitality</div>
+          </div>
+
+          <div class="story__stat">
+            <div class="story__stat-value" aria-label="4.9 guest rating">4.9</div>
+            <div class="story__stat-label">Guest rating</div>
+          </div>
+
+        </div><!-- /.story__stats-row -->
+
+        <!-- Circular CTA — right aligned -->
+        <div class="story__cta-wrap">
+          <a
+            href="#story"
+            id="story-cta"
+            class="story__cta"
+            aria-label="Read our full story"
+            data-cursor="view"
+          >
+            <!-- Rotating SVG text ring -->
+            <svg
+              class="story__cta-ring"
+              viewBox="0 0 200 200"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <defs>
+                <path
+                  id="story-ring-path"
+                  d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0"
+                />
+              </defs>
+              <text>
+                <textPath
+                  href="#story-ring-path"
+                  startOffset="0%"
+                  aria-hidden="true"
+                >
+                  OUR STORY · MAISON ÉTÉ · PROVENCE · EST. 1924 · &nbsp;
+                </textPath>
+              </text>
+            </svg>
+
+            <!-- Centre label -->
+            <div class="story__cta-inner" aria-hidden="true">
+              <span class="story__cta-text">Our story</span>
+              <span class="story__cta-arrow">↗</span>
+            </div>
+
+          </a>
+        </div><!-- /.story__cta-wrap -->
+
+      </div><!-- /.story__editorial-inner -->
+    </div><!-- /.story__editorial -->
+
+  </section><!-- /#story -->
+
+  <!-- ═══════════════════════════════════════════
+       THE SUITES SECTION
+  ═══════════════════════════════════════════ -->
+  <section id="suites" aria-label="The Suites at Maison Été">
+
+    <!-- ── INTRO ──────────────────────────────── -->
+    <div class="suites__intro">
+      <div class="suites__intro-inner">
+
+        <div class="suites__intro-left">
+          <span class="suites__eyebrow">[ THE SUITES ]</span>
+          <h2 class="suites__headline" aria-label="Three ways to stay.">
+            Three ways to <em class="suites__headline-accent">stay</em>.
+          </h2>
+        </div>
+
+        <div class="suites__intro-right">
+          <p class="suites__intro-desc">
+            Each room is named after a hill we can see from its window.
+          </p>
+        </div>
+
+      </div>
+    </div><!-- /.suites__intro -->
+
+    <!-- ── PINNED HORIZONTAL GALLERY (desktop) ──── -->
+    <div id="suites-pin" aria-label="Suite gallery" aria-roledescription="carousel">
+
+      <!-- UI chrome: label + counter + progress/ticks -->
+      <div class="suites__chrome" aria-hidden="true">
+
+        <span class="suites__chrome-label">[ ROOMS ]</span>
+
+        <!-- Rolling counter "01 / 03" with odometer digits -->
+        <div class="suites__counter" aria-label="Suite counter">
+          <div class="suites__counter-current">
+            <div class="suites__counter-slides">
+              <span>01</span>
+              <span>02</span>
+              <span>03</span>
+            </div>
+          </div>
+          <span class="suites__counter-sep">/</span>
+          <span class="suites__counter-total">03</span>
+        </div>
+
+        <!-- Progress bar + labelled tick markers -->
+        <div class="suites__progress-bar" role="group" aria-label="Suite navigation">
+          <div class="suites__progress-fill"></div>
+
+          <div class="suites__ticks">
+
+            <button
+              class="suites__tick is-active"
+              type="button"
+              aria-label="Go to suite 01: LA GARRIGUE"
+              data-panel="0"
+            >
+              <span class="suites__tick-dot"></span>
+              <span class="suites__tick-label">LA GARRIGUE</span>
+            </button>
+
+            <button
+              class="suites__tick"
+              type="button"
+              aria-label="Go to suite 02: LE LUBERON"
+              data-panel="1"
+            >
+              <span class="suites__tick-dot"></span>
+              <span class="suites__tick-label">LE LUBERON</span>
+            </button>
+
+            <button
+              class="suites__tick"
+              type="button"
+              aria-label="Go to suite 03: LES ALPILLES"
+              data-panel="2"
+            >
+              <span class="suites__tick-dot"></span>
+              <span class="suites__tick-label">LES ALPILLES</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div><!-- /.suites__chrome -->
+
+      <!-- Horizontal flex track (300vw) -->
+      <div class="suites__track">
+
+        <!-- ─────────────── PANEL 01 ─────────────── -->
+        <article class="suites__panel is-active" aria-label="Suite 01: La Garrigue">
+
+          <!-- Left column (45%) -->
+          <div class="suites__panel-left">
+            <!-- Outlined number top-left behind everything, never behind body text -->
+            <span class="suites__panel-number" aria-hidden="true">01</span>
+
+            <div class="suites__panel-body">
+              <h3 class="suites__panel-name">La Garrigue</h3>
+              <p class="suites__panel-desc">Sun-bleached stone and wild thyme.</p>
+
+              <div class="suites__specs" role="list">
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">SIZE</span>
+                  <span class="suites__spec-value" data-val="42">42</span>
+                  <span class="suites__spec-unit">m²</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">GUESTS</span>
+                  <span class="suites__spec-value" data-val="2">2</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">FROM</span>
+                  <span class="suites__spec-prefix">€</span>
+                  <span class="suites__spec-value" data-val="390">390</span>
+                  <span class="suites__spec-unit">/ night</span>
+                </div>
+              </div>
+
+              <div class="suites__amenities">
+                <span class="suites__chip">Private Terrace</span>
+                <span class="suites__chip">Soaking Tub</span>
+                <span class="suites__chip">Fireplace</span>
+              </div>
+
+              <a
+                href="#reserve"
+                class="suites__reserve-btn"
+                data-cursor="book"
+                data-magnetic
+                aria-label="Reserve La Garrigue suite"
+              >Reserve this suite ↗</a>
+            </div>
+          </div><!-- /.suites__panel-left -->
+
+          <!-- Right column (55%): arch-topped frame 4:5 max-height 78vh -->
+          <div class="suites__panel-right">
+            <div class="suites__img-frame" data-cursor="drag">
+              <div class="suites__img-inner">
+                <picture>
+                  <source srcset="/src/assets/img/suite-1.webp" type="image/webp" />
+                  <img
+                    src="/src/assets/img/suite-1.jpg"
+                    alt="La Garrigue suite interior"
+                    width="800"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  />
+                </picture>
+                <div class="suites__img-placeholder" style="display:none;" aria-hidden="true">
+                  <span class="suites__img-placeholder-code">suite-1.jpg</span>
+                  <span class="suites__img-placeholder-name">La Garrigue</span>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.suites__panel-right -->
+
+        </article><!-- /panel 01 -->
+
+        <!-- ─────────────── PANEL 02 ─────────────── -->
+        <article class="suites__panel" aria-label="Suite 02: Le Luberon">
+
+          <div class="suites__panel-left">
+            <span class="suites__panel-number" aria-hidden="true">02</span>
+
+            <div class="suites__panel-body">
+              <h3 class="suites__panel-name">Le Luberon</h3>
+              <p class="suites__panel-desc">Framed by oak and distant lavender.</p>
+
+              <div class="suites__specs" role="list">
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">SIZE</span>
+                  <span class="suites__spec-value" data-val="54">54</span>
+                  <span class="suites__spec-unit">m²</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">GUESTS</span>
+                  <span class="suites__spec-value" data-val="3">3</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">FROM</span>
+                  <span class="suites__spec-prefix">€</span>
+                  <span class="suites__spec-value" data-val="460">460</span>
+                  <span class="suites__spec-unit">/ night</span>
+                </div>
+              </div>
+
+              <div class="suites__amenities">
+                <span class="suites__chip">Garden Access</span>
+                <span class="suites__chip">Four-Poster Bed</span>
+                <span class="suites__chip">Rain Shower</span>
+              </div>
+
+              <a
+                href="#reserve"
+                class="suites__reserve-btn"
+                data-cursor="book"
+                data-magnetic
+                aria-label="Reserve Le Luberon suite"
+              >Reserve this suite ↗</a>
+            </div>
+          </div>
+
+          <div class="suites__panel-right">
+            <div class="suites__img-frame" data-cursor="drag">
+              <div class="suites__img-inner">
+                <img
+                  src="/src/assets/img/suite-2.jpg"
+                  alt="Le Luberon suite interior"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="suites__img-placeholder" style="display:none;" aria-hidden="true">
+                  <span class="suites__img-placeholder-code">suite-2.jpg</span>
+                  <span class="suites__img-placeholder-name">Le Luberon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article><!-- /panel 02 -->
+
+        <!-- ─────────────── PANEL 03 ─────────────── -->
+        <article class="suites__panel" aria-label="Suite 03: Les Alpilles">
+
+          <div class="suites__panel-left">
+            <span class="suites__panel-number" aria-hidden="true">03</span>
+
+            <div class="suites__panel-body">
+              <h3 class="suites__panel-name">Les Alpilles</h3>
+              <p class="suites__panel-desc">Mornings that begin with mountains.</p>
+
+              <div class="suites__specs" role="list">
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">SIZE</span>
+                  <span class="suites__spec-value" data-val="68">68</span>
+                  <span class="suites__spec-unit">m²</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">GUESTS</span>
+                  <span class="suites__spec-value" data-val="4">4</span>
+                </div>
+                <div class="suites__spec" role="listitem">
+                  <span class="suites__spec-label">FROM</span>
+                  <span class="suites__spec-prefix">€</span>
+                  <span class="suites__spec-value" data-val="520">520</span>
+                  <span class="suites__spec-unit">/ night</span>
+                </div>
+              </div>
+
+              <div class="suites__amenities">
+                <span class="suites__chip">Private Pool</span>
+                <span class="suites__chip">Butler Service</span>
+                <span class="suites__chip">Panoramic View</span>
+              </div>
+
+              <a
+                href="#reserve"
+                class="suites__reserve-btn"
+                data-cursor="book"
+                data-magnetic
+                aria-label="Reserve Les Alpilles suite"
+              >Reserve this suite ↗</a>
+            </div>
+          </div>
+
+          <div class="suites__panel-right">
+            <div class="suites__img-frame" data-cursor="drag">
+              <div class="suites__img-inner">
+                <img
+                  src="/src/assets/img/suite-3.jpg"
+                  alt="Les Alpilles suite interior"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                  decoding="async"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                />
+                <div class="suites__img-placeholder" style="display:none;" aria-hidden="true">
+                  <span class="suites__img-placeholder-code">suite-3.jpg</span>
+                  <span class="suites__img-placeholder-name">Les Alpilles</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </article><!-- /panel 03 -->
+
+      </div><!-- /.suites__track -->
+
+    </div><!-- /#suites-pin -->
+
+    <!-- ── MOBILE STACK (shown on ≤900px or reduced-motion) ── -->
+    <div class="suites__mobile-stack" aria-label="Suites list">
+
+      <article class="suites__mobile-panel" aria-label="Suite 01: La Garrigue">
+        <div class="suites__mobile-img">
+          <picture>
+            <source srcset="/src/assets/img/suite-1.webp" type="image/webp" />
+            <img src="/src/assets/img/suite-1.jpg" alt="La Garrigue suite" width="800" height="1000" loading="lazy" decoding="async"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          </picture>
+          <div class="suites__mobile-img-placeholder" style="display:none;" aria-hidden="true">
+            <span>suite-1.jpg</span>
+          </div>
+        </div>
+        <div class="suites__mobile-meta">
+          <span class="suites__mobile-number">01</span>
+          <h3 class="suites__mobile-name">La Garrigue</h3>
+          <p class="suites__mobile-desc">Sun-bleached stone and wild thyme.</p>
+          <div class="suites__mobile-specs">
+            <span>SIZE 42 m²</span>
+            <span>•</span>
+            <span>GUESTS 2</span>
+            <span>•</span>
+            <span>FROM €390 / night</span>
+          </div>
+          <div class="suites__amenities">
+            <span class="suites__chip">Private Terrace</span>
+            <span class="suites__chip">Soaking Tub</span>
+            <span class="suites__chip">Fireplace</span>
+          </div>
+          <a href="#reserve" class="suites__reserve-btn" aria-label="Reserve La Garrigue">Reserve this suite ↗</a>
+        </div>
+      </article>
+
+      <article class="suites__mobile-panel" aria-label="Suite 02: Le Luberon">
+        <div class="suites__mobile-img">
+          <img src="/src/assets/img/suite-2.jpg" alt="Le Luberon suite" width="800" height="1000" loading="lazy" decoding="async"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="suites__mobile-img-placeholder" style="display:none;" aria-hidden="true">
+            <span>suite-2.jpg</span>
+          </div>
+        </div>
+        <div class="suites__mobile-meta">
+          <span class="suites__mobile-number">02</span>
+          <h3 class="suites__mobile-name">Le Luberon</h3>
+          <p class="suites__mobile-desc">Framed by oak and distant lavender.</p>
+          <div class="suites__mobile-specs">
+            <span>SIZE 54 m²</span>
+            <span>•</span>
+            <span>GUESTS 3</span>
+            <span>•</span>
+            <span>FROM €460 / night</span>
+          </div>
+          <div class="suites__amenities">
+            <span class="suites__chip">Garden Access</span>
+            <span class="suites__chip">Four-Poster Bed</span>
+            <span class="suites__chip">Rain Shower</span>
+          </div>
+          <a href="#reserve" class="suites__reserve-btn" aria-label="Reserve Le Luberon">Reserve this suite ↗</a>
+        </div>
+      </article>
+
+      <article class="suites__mobile-panel" aria-label="Suite 03: Les Alpilles">
+        <div class="suites__mobile-img">
+          <img src="/src/assets/img/suite-3.jpg" alt="Les Alpilles suite" width="800" height="1000" loading="lazy" decoding="async"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="suites__mobile-img-placeholder" style="display:none;" aria-hidden="true">
+            <span>suite-3.jpg</span>
+          </div>
+        </div>
+        <div class="suites__mobile-meta">
+          <span class="suites__mobile-number">03</span>
+          <h3 class="suites__mobile-name">Les Alpilles</h3>
+          <p class="suites__mobile-desc">Mornings that begin with mountains.</p>
+          <div class="suites__mobile-specs">
+            <span>SIZE 68 m²</span>
+            <span>•</span>
+            <span>GUESTS 4</span>
+            <span>•</span>
+            <span>FROM €520 / night</span>
+          </div>
+          <div class="suites__amenities">
+            <span class="suites__chip">Private Pool</span>
+            <span class="suites__chip">Butler Service</span>
+            <span class="suites__chip">Panoramic View</span>
+          </div>
+          <a href="#reserve" class="suites__reserve-btn" aria-label="Reserve Les Alpilles">Reserve this suite ↗</a>
+        </div>
+      </article>
+
+    </div><!-- /.suites__mobile-stack -->
+
+    <!-- ── FOOTER STRIP ────────────────────────── -->
+    <div class="suites__footer-strip" aria-label="Suite amenity note">
+      <p class="suites__footer-line">
+        Every suite includes breakfast on the terrace.
+      </p>
+    </div>
+
+  </section><!-- /#suites -->
+
+  <!-- ═══════════════════════════════════════════
+       SECTION A: EXPERIENCES
+  ═══════════════════════════════════════════ -->
+  <section id="experiences" aria-label="Experiences at Maison Été">
+
+    <div class="exp__inner">
+
+      <header class="exp__header">
+        <span class="exp__eyebrow">[ EXPERIENCES ]</span>
+        <h2 class="exp__headline" aria-label="Days without a schedule.">
+          Days without a <em class="exp__headline-accent">schedule.</em>
+        </h2>
+      </header>
+
+      <div class="exp__list" role="list">
+
+        <!-- Row 01: The Long Table (dining) -->
+        <a href="#dining" class="exp__row" role="listitem" data-idx="0" aria-label="Experience 01: The Long Table">
+          <div class="exp__row-content">
+            <span class="exp__row-index">01</span>
+            <h3 class="exp__row-title">The Long Table</h3>
+            <p class="exp__row-desc">Evenings under the pergola with shared plates and local wine.</p>
+            <span class="exp__row-arrow" aria-hidden="true">↗</span>
+          </div>
+          <!-- Mobile accordion inline preview -->
+          <div class="exp__inline-preview" aria-hidden="true">
+            <div class="exp__inline-img-wrap">
+              <picture>
+                <source srcset="/src/assets/img/dining.webp" type="image/webp" />
+                <img src="/src/assets/img/dining.jpg" alt="The Long Table" width="800" height="533" loading="lazy" decoding="async"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              </picture>
+              <div class="exp__inline-placeholder" style="display:none;">dining.jpg</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Row 02: The Quiet Room (spa) -->
+        <a href="#spa" class="exp__row" role="listitem" data-idx="1" aria-label="Experience 02: The Quiet Room">
+          <div class="exp__row-content">
+            <span class="exp__row-index">02</span>
+            <h3 class="exp__row-title">The Quiet Room</h3>
+            <p class="exp__row-desc">Cedar steam, cold water immersion, and wild lavender oils.</p>
+            <span class="exp__row-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="exp__inline-preview" aria-hidden="true">
+            <div class="exp__inline-img-wrap">
+              <picture>
+                <source srcset="/src/assets/img/spa.webp" type="image/webp" />
+                <img src="/src/assets/img/spa.jpg" alt="The Quiet Room" width="800" height="1000" loading="lazy" decoding="async"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              </picture>
+              <div class="exp__inline-placeholder" style="display:none;">spa.jpg</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Row 03: The Pool at Dusk (pool) -->
+        <a href="#pool" class="exp__row" role="listitem" data-idx="2" aria-label="Experience 03: The Pool at Dusk">
+          <div class="exp__row-content">
+            <span class="exp__row-index">03</span>
+            <h3 class="exp__row-title">The Pool at Dusk</h3>
+            <p class="exp__row-desc">Limestone ledge warmed by the day, open to the stars.</p>
+            <span class="exp__row-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="exp__inline-preview" aria-hidden="true">
+            <div class="exp__inline-img-wrap">
+              <picture>
+                <source srcset="/src/assets/img/pool.webp" type="image/webp" />
+                <img src="/src/assets/img/pool.jpg" alt="The Pool at Dusk" width="800" height="533" loading="lazy" decoding="async"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              </picture>
+              <div class="exp__inline-placeholder" style="display:none;">pool.jpg</div>
+            </div>
+          </div>
+        </a>
+
+        <!-- Row 04: The Olive Walk (guided walks) -->
+        <a href="#walks" class="exp__row" role="listitem" data-idx="3" aria-label="Experience 04: The Olive Walk">
+          <div class="exp__row-content">
+            <span class="exp__row-index">04</span>
+            <h3 class="exp__row-title">The Olive Walk</h3>
+            <p class="exp__row-desc">Centuries-old groves leading to the crest of the hill.</p>
+            <span class="exp__row-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="exp__inline-preview" aria-hidden="true">
+            <div class="exp__inline-img-wrap">
+              <picture>
+                <source srcset="/src/assets/img/courtyard.webp" type="image/webp" />
+                <img src="/src/assets/img/courtyard.jpg" alt="The Olive Walk" width="800" height="600" loading="lazy" decoding="async"
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              </picture>
+              <div class="exp__inline-placeholder" style="display:none;">courtyard.jpg</div>
+            </div>
+          </div>
+        </a>
+
+      </div><!-- /.exp__list -->
+
+      <!-- Centered terracotta pill -->
+      <div class="exp__cta">
+        <a
+          href="#experiences-all"
+          class="exp__cta-btn"
+          data-cursor="view"
+          data-magnetic
+          aria-label="See all experiences"
+        >See all experiences ↗</a>
+      </div>
+
+    </div><!-- /.exp__inner -->
+
+    <!-- Reusable floating image preview (desktop only) -->
+    <div id="exp-preview" class="exp__preview" aria-hidden="true">
+      <div class="exp__preview-img is-active" data-idx="0">
+        <img src="/src/assets/img/dining.jpg" alt="" width="320" height="420" loading="lazy" decoding="async"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="exp__preview-placeholder" style="display:none;">dining.jpg</div>
+      </div>
+      <div class="exp__preview-img" data-idx="1">
+        <img src="/src/assets/img/spa.jpg" alt="" width="320" height="420" loading="lazy" decoding="async"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="exp__preview-placeholder" style="display:none;">spa.jpg</div>
+      </div>
+      <div class="exp__preview-img" data-idx="2">
+        <img src="/src/assets/img/pool.jpg" alt="" width="320" height="420" loading="lazy" decoding="async"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="exp__preview-placeholder" style="display:none;">pool.jpg</div>
+      </div>
+      <div class="exp__preview-img" data-idx="3">
+        <img src="/src/assets/img/courtyard.jpg" alt="" width="320" height="420" loading="lazy" decoding="async"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="exp__preview-placeholder" style="display:none;">courtyard.jpg</div>
+      </div>
+    </div>
+
+  </section><!-- /#experiences -->
+
+  <!-- ═══════════════════════════════════════════
+       SECTION B: MARQUEE
+  ═══════════════════════════════════════════ -->
+  <section id="marquee-section" aria-label="Editorial phrases ticker">
+
+    <!-- Row 1: scrolls left, filled olive Fraunces light italic -->
+    <div class="marquee__row marquee__row--1 marquee__row--filled" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: scrolls right, 1px olive outlined text -->
+    <div class="marquee__row marquee__row--2 marquee__row--outlined" aria-hidden="true">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+        <div class="marquee__content">
+          <span class="marquee__phrase">Slow mornings <span class="marquee__bullet">•</span> Long lunches <span class="marquee__bullet">•</span> Golden hours <span class="marquee__bullet">•</span> Quiet nights <span class="marquee__bullet">•</span>&nbsp;</span>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /#marquee-section -->
+
+  <!-- ═══════════════════════════════════════════
+       SECTION A: RESERVE
+  ═══════════════════════════════════════════ -->
+  <section id="reserve" aria-label="Reserve your stay at Maison Été">
+
+    <div class="reserve__inner">
+
+      <!-- Left Column (Cols 1-5) -->
+      <div class="reserve__left">
+        <span class="reserve__eyebrow">[ RESERVE ]</span>
+        <h2 class="reserve__headline" aria-label="Your room is waiting.">
+          Your room is <em class="reserve__headline-accent">waiting.</em>
+        </h2>
+        <p class="reserve__desc">
+          Select your dates and preferred suite. Every stay includes artisanal breakfast on the terrace, unhurried afternoons by the pool, and the quiet beauty of the Provençal hills.
+        </p>
+
+        <!-- Small arch-topped image with slow parallax -->
+        <div class="reserve__image-frame" aria-hidden="true">
+          <div class="reserve__image-inner">
+            <picture>
+              <source srcset="/src/assets/img/courtyard.webp" type="image/webp" />
+              <img src="/src/assets/img/courtyard.jpg" alt="Maison Été courtyard" width="400" height="500" loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        </div>
+      </div><!-- /.reserve__left -->
+
+      <!-- Right Column (Cols 7-12): Booking Card -->
+      <div class="reserve__right">
+        <div class="booking-card" aria-label="Reservation widget">
+
+          <!-- Nav & Step Progress -->
+          <div class="booking-card__nav" aria-label="Reservation steps">
+            <div class="booking-card__steps">
+              <span class="booking-card__step-item is-active" data-step="1">01 DATES</span>
+              <span class="booking-card__step-item" data-step="2">02 SUITE</span>
+              <span class="booking-card__step-item" data-step="3">03 CONFIRM</span>
+            </div>
+            <div class="booking-card__progress-track" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+              <div class="booking-card__progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="booking-card__content-wrap">
+
+            <!-- ── STEP 1: DATES + GUESTS ───────────── -->
+            <div id="booking-step-1" class="booking-step is-active" aria-label="Step 1: Dates and Guests">
+
+              <div class="cal-header">
+                <button id="cal-prev" class="cal-nav-btn" type="button" aria-label="Previous month" disabled>←</button>
+                <button id="cal-next" class="cal-nav-btn" type="button" aria-label="Next month">→</button>
+              </div>
+
+              <!-- Two-month calendar container -->
+              <div class="cal-months-wrap" role="region" aria-label="Calendar"></div>
+
+              <!-- Nights count & Guest stepper -->
+              <div class="booking-subpanel">
+                <div class="nights-indicator">
+                  <span class="nights-indicator__label">Length of stay</span>
+                  <div class="nights-indicator__value">
+                    <span class="nights-unselected">Select your dates</span>
+                  </div>
+                </div>
+
+                <div class="guests-stepper" aria-label="Guests count">
+                  <button id="guests-minus" class="stepper-btn" type="button" aria-label="Decrease guests" disabled>−</button>
+                  <span class="guests-count" aria-live="polite">2</span>
+                  <button id="guests-plus" class="stepper-btn" type="button" aria-label="Increase guests">+</button>
+                </div>
+              </div>
+
+              <!-- Continue Button -->
+              <button
+                id="step-1-next"
+                class="booking-btn-primary"
+                type="button"
+                data-cursor="book"
+                disabled
+              >
+                Continue to Suite ↗
+              </button>
+              <p id="step-1-helper" class="booking-btn-helper">Choose check-in and check-out to continue.</p>
+
+            </div><!-- /#booking-step-1 -->
+
+            <!-- ── STEP 2: SUITE SELECTION ──────────── -->
+            <div id="booking-step-2" class="booking-step" aria-label="Step 2: Choose Suite">
+
+              <div class="booking-step__header">
+                <h3 class="booking-step__title">Select your suite</h3>
+                <button id="step-2-back" class="booking-step__back" type="button">← Back</button>
+              </div>
+
+              <div class="suites-select-list" role="radiogroup" aria-label="Available Suites">
+
+                <div class="suite-card is-selected" role="radio" aria-checked="true" data-suite="0">
+                  <div class="suite-card__radio"><div class="suite-card__dot"></div></div>
+                  <div class="suite-card__thumb">
+                    <img src="/src/assets/img/suite-1.jpg" alt="La Garrigue suite thumbnail" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="suite-card__thumb-placeholder" style="display:none;">suite-1.jpg</div>
+                  </div>
+                  <div class="suite-card__meta">
+                    <strong class="suite-card__name">La Garrigue</strong>
+                    <span class="suite-card__sub">42 m² · Max 2 guests</span>
+                  </div>
+                  <div class="suite-card__rate">€390 <span>/ night</span></div>
+                </div>
+
+                <div class="suite-card" role="radio" aria-checked="false" data-suite="1">
+                  <div class="suite-card__radio"><div class="suite-card__dot"></div></div>
+                  <div class="suite-card__thumb">
+                    <img src="/src/assets/img/suite-2.jpg" alt="Le Luberon suite thumbnail" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="suite-card__thumb-placeholder" style="display:none;">suite-2.jpg</div>
+                  </div>
+                  <div class="suite-card__meta">
+                    <strong class="suite-card__name">Le Luberon</strong>
+                    <span class="suite-card__sub">54 m² · Max 3 guests</span>
+                  </div>
+                  <div class="suite-card__rate">€460 <span>/ night</span></div>
+                </div>
+
+                <div class="suite-card" role="radio" aria-checked="false" data-suite="2">
+                  <div class="suite-card__radio"><div class="suite-card__dot"></div></div>
+                  <div class="suite-card__thumb">
+                    <img src="/src/assets/img/suite-3.jpg" alt="Les Alpilles suite thumbnail" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="suite-card__thumb-placeholder" style="display:none;">suite-3.jpg</div>
+                  </div>
+                  <div class="suite-card__meta">
+                    <strong class="suite-card__name">Les Alpilles</strong>
+                    <span class="suite-card__sub">68 m² · Max 4 guests</span>
+                  </div>
+                  <div class="suite-card__rate">€520 <span>/ night</span></div>
+                </div>
+
+              </div><!-- /.suites-select-list -->
+
+              <!-- Add-ons Chips -->
+              <div class="addons-row" aria-label="Stay enhancements">
+                <button type="button" class="addon-chip" data-addon="breakfast">
+                  <span style="display:flex;align-items:center;">
+                    <span class="addon-chip__check">✓</span>
+                    Breakfast on the terrace
+                  </span>
+                  <span>+€28 / guest / night</span>
+                </button>
+                <button type="button" class="addon-chip" data-addon="transfer">
+                  <span style="display:flex;align-items:center;">
+                    <span class="addon-chip__check">✓</span>
+                    Airport transfer
+                  </span>
+                  <span>+€85</span>
+                </button>
+              </div>
+
+              <!-- Live Price Summary Panel -->
+              <div class="price-summary" aria-live="polite">
+                <div class="price-summary__line">
+                  <span>Room rate</span>
+                  <span id="price-nights-calc">—</span>
+                </div>
+                <div class="price-summary__line">
+                  <span>Add-ons</span>
+                  <span id="price-addons-calc">None</span>
+                </div>
+                <div class="price-summary__line">
+                  <span>Taxes (8%)</span>
+                  <span id="price-taxes-calc">—</span>
+                </div>
+                <div class="price-summary__line price-summary__line--total">
+                  <span class="price-summary__total-label">Total stay</span>
+                  <span id="price-total-val" class="price-summary__total-val">€0</span>
+                </div>
+              </div>
+
+              <button
+                id="step-2-next"
+                class="booking-btn-primary"
+                type="button"
+                data-cursor="book"
+              >
+                Continue to Details ↗
+              </button>
+
+            </div><!-- /#booking-step-2 -->
+
+            <!-- ── STEP 3: CONFIRMATION & FORM ──────── -->
+            <div id="booking-step-3" class="booking-step" aria-label="Step 3: Confirmation">
+
+              <div class="booking-step__header">
+                <h3 class="booking-step__title">Guest Details</h3>
+                <button id="step-3-back" class="booking-step__back" type="button">← Back</button>
+              </div>
+
+              <form id="confirm-form" class="confirm-form" novalidate>
+                <div class="form-group">
+                  <label for="guest-name" class="form-label">Full Name</label>
+                  <input id="guest-name" class="form-input" type="text" placeholder="Camille Laurent" required />
+                  <span class="form-error">Please enter your full name.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="guest-email" class="form-label">Email Address</label>
+                  <input id="guest-email" class="form-input" type="email" placeholder="camille@example.com" required />
+                  <span class="form-error">Please enter a valid email address.</span>
+                </div>
+
+                <div class="form-group">
+                  <label for="guest-notes" class="form-label">Special Requests (Optional)</label>
+                  <textarea id="guest-notes" class="form-textarea" placeholder="Dietary preferences, arrival time, etc."></textarea>
+                </div>
+
+                <button
+                  id="step-3-submit"
+                  class="booking-btn-primary booking-btn-primary--terracotta"
+                  type="submit"
+                  data-cursor="book"
+                  data-magnetic
+                >
+                  Confirm reservation ↗
+                </button>
+              </form>
+
+              <!-- Success Screen -->
+              <div class="booking-success" role="alert" aria-live="assertive">
+                <svg class="success-check-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="success-check-circle" cx="32" cy="32" r="30" />
+                  <path class="success-check-mark" d="M 20 32 L 28 40 L 44 24" />
+                </svg>
+
+                <h4 id="success-name" class="success-title">Merci.</h4>
+                <div id="success-ref" class="success-ref">Reference: ME-2610-8X4K</div>
+
+                <div id="success-summary-details" class="success-summary"></div>
+
+                <button id="booking-start-over" class="btn-start-over" type="button">
+                  Start over with a new reservation
+                </button>
+              </div>
+
+            </div><!-- /#booking-step-3 -->
+
+          </div><!-- /.booking-card__content-wrap -->
+
+        </div><!-- /.booking-card -->
+      </div><!-- /.reserve__right -->
+
+    </div><!-- /.reserve__inner -->
+
+  </section><!-- /#reserve -->
+
+  </main><!-- /#main-content -->
+
+  <!-- ═══════════════════════════════════════════
+       SECTION B: FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="site-footer" aria-label="Maison Été footer">
+
+    <div class="footer__inner">
+
+      <!-- Giant Fitted Brand Title with scrubbed outline-to-solid letter fill -->
+      <div class="footer__brand-wrap" aria-label="Maison Été">
+        <div class="footer__brand-stage">
+          <div class="footer__brand-outline" aria-hidden="true">
+            <span class="footer__char">M</span><span class="footer__char">a</span><span class="footer__char">i</span><span class="footer__char">s</span><span class="footer__char">o</span><span class="footer__char">n</span><span class="footer__char">&nbsp;</span><span class="footer__char">É</span><span class="footer__char">t</span><span class="footer__char">é</span>
+          </div>
+          <div class="footer__brand-solid" aria-hidden="true">
+            <span class="footer__char">M</span><span class="footer__char">a</span><span class="footer__char">i</span><span class="footer__char">s</span><span class="footer__char">o</span><span class="footer__char">n</span><span class="footer__char">&nbsp;</span><span class="footer__char">É</span><span class="footer__char">t</span><span class="footer__char">é</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hairline-separated 4-column grid -->
+      <div class="footer__grid">
+
+        <!-- Column 1: ADDRESS -->
+        <div class="footer__col">
+          <span class="footer__col-label">Address</span>
+          <p class="footer__text">
+            Route des Oliviers<br />
+            84220 Gordes<br />
+            Provence, France
+          </p>
+        </div>
+
+        <!-- Column 2: CONTACT -->
+        <div class="footer__col">
+          <span class="footer__col-label">Contact</span>
+          <ul class="footer__links">
+            <li><a href="mailto:bonjour@maison-ete.com" class="footer__link">bonjour@maison-ete.com</a></li>
+            <li><a href="tel:+33490720000" class="footer__link">+33 4 90 72 00 00</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: EXPLORE -->
+        <div class="footer__col">
+          <span class="footer__col-label">Explore</span>
+          <ul class="footer__links">
+            <li><a href="#suites" class="footer__link">Rooms</a></li>
+            <li><a href="#experiences" class="footer__link">Experiences</a></li>
+            <li><a href="#story" class="footer__link">Story</a></li>
+            <li><a href="#reserve" class="footer__link">Reserve</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: NEWSLETTER -->
+        <div class="footer__col">
+          <span class="footer__col-label">Newsletter</span>
+          <form id="footer-newsletter" class="footer__newsletter-form" novalidate>
+            <div class="newsletter-input-wrap">
+              <input
+                id="newsletter-email"
+                class="newsletter-input"
+                type="email"
+                placeholder="Your email address"
+                required
+              />
+              <button class="newsletter-submit-btn" type="submit" aria-label="Subscribe to newsletter">→</button>
+            </div>
+            <span id="newsletter-msg" class="newsletter-msg" aria-live="polite"></span>
+          </form>
+        </div>
+
+      </div><!-- /.footer__grid -->
+
+      <!-- Bottom Row -->
+      <div class="footer__bottom">
+        <span class="footer__copyright">© 2026 Maison Été. All rights reserved.</span>
+
+        <!-- Live Provence-time clock -->
+        <div class="footer__clock" aria-label="Current time in Provence">
+          <span style="opacity:0.5;">Provence</span>
+          <span id="footer-time" class="footer__clock-time">12:00</span>
+        </div>
+
+        <!-- Status chip with slow terracotta pulse -->
+        <div class="footer__status-chip" role="status">
+          <span class="status-dot"></span>
+          <span>Reservations Open</span>
+        </div>
+
+        <!-- Circular Back to Top Button -->
+        <button id="back-to-top" class="btn-back-to-top" type="button" aria-label="Back to top" data-magnetic>
+          ↑
+        </button>
+      </div>
+
+    </div><!-- /.footer__inner -->
+
+  </footer><!-- /#site-footer -->
+
+</body>
+</html>
