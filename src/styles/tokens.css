@@ -50,7 +50,7 @@
 
   /* Layers */
   --z-loader:  1000;
-  --z-cursor:   950;
+  --z-cursor:  9999;
   --z-nav:      900;
   --z-bar:       10;
 }

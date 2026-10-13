@@ -454,6 +454,14 @@
 }
 
 @media (max-width: 600px) {
+  .story__editorial {
+    padding: 60px var(--edge);
+  }
+
+  .story__edit-para {
+    font-size: clamp(1.35rem, 5.5vw, 2rem);
+  }
+
   .story__bg-word {
     font-size: clamp(3rem, 15vw, 6rem);
   }

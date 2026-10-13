@@ -54,26 +54,26 @@ export function initCursor() {
   document.addEventListener('mouseenter', () => cursor.classList.remove('cursor--hidden'));
 
   // Expanded state on interactive elements
-  const hoverTargets = '[data-cursor], a, button, .thumb-btn, input, select';
+  const hoverTargets = '[data-cursor], a, button, .thumb-btn, input, select, textarea, .exp__row, .suite-card, .addon-chip, .cal-day:not(.is-disabled)';
 
   document.addEventListener('mouseover', (e) => {
     const el = e.target.closest(hoverTargets);
     if (!el) return;
 
-    const cursorType = el.dataset.cursor || 'hover';
+    const cursorType = el.dataset.cursor || (el.closest('.exp__row') ? 'view' : (el.closest('.suite-card') ? 'book' : 'hover'));
     cursor.classList.add('cursor--expanded');
 
     if (cursorType === 'view')  { showLabel('VIEW'); }
     else if (cursorType === 'drag') { showLabel('DRAG'); cursor.classList.add('cursor--drag'); }
     else if (cursorType === 'book') { showLabel('BOOK'); }
-    else { label.style.opacity = '0'; cursor.classList.remove('cursor--labeled'); }
+    else { label.style.opacity = ''; cursor.classList.remove('cursor--labeled'); }
   });
 
   document.addEventListener('mouseout', (e) => {
     const el = e.target.closest(hoverTargets);
     if (!el) return;
     cursor.classList.remove('cursor--expanded', 'cursor--labeled', 'cursor--drag');
-    label.style.opacity = '0';
+    label.style.opacity = '';
   });
 
   function showLabel(text) {

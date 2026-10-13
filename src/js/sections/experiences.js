@@ -170,8 +170,9 @@ function initDesktopHover(section) {
         overwrite: 'auto',
       });
 
-      // 3. Hide cursor ring while preview is active
-      cursor?.classList.add('cursor--hidden');
+      // 3. Keep cursor visible with VIEW state while preview is active
+      cursor?.classList.remove('cursor--hidden');
+      cursor?.classList.add('cursor--expanded');
     });
   });
 

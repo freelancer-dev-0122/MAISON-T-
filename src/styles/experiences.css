@@ -361,6 +361,30 @@
   }
 }
 
+@media (max-width: 600px) {
+  #experiences {
+    padding: 60px var(--edge);
+  }
+
+  .exp__row-content {
+    grid-template-columns: 32px 1fr auto;
+    gap: 0.35rem 0.75rem;
+    padding: 1.25rem 0;
+  }
+
+  .exp__row-index {
+    font-size: 11px;
+  }
+
+  .exp__row-title {
+    font-size: clamp(1.6rem, 6.5vw, 2.4rem);
+  }
+
+  .exp__row-desc {
+    font-size: var(--text-xs);
+  }
+}
+
 /* ── Reduced Motion ─────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {

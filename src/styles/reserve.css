@@ -890,12 +890,12 @@
 
 @media (max-width: 900px) {
   #reserve {
-    padding: 100px var(--edge);
+    padding: 80px var(--edge);
   }
 
   .reserve__inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .reserve__left {
@@ -914,14 +914,84 @@
 
   .cal-months-wrap {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .cal-month:nth-child(2) {
-    display: none; /* Show only 1 month on mobile */
+    display: none; /* Show 1 month on mobile */
   }
 
   .reserve__image-frame {
     max-width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  #reserve {
+    padding: 60px var(--edge);
+  }
+
+  .booking-card {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+
+  .booking-card__step-item {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .booking-step__title {
+    font-size: 1.35rem;
+  }
+
+  .cal-day {
+    font-size: 11px;
+  }
+
+  .cal-day-label {
+    font-size: 9px;
+  }
+
+  .suite-card {
+    grid-template-columns: auto 48px 1fr auto;
+    gap: 0.6rem;
+    padding: 10px 12px;
+  }
+
+  .suite-card__thumb {
+    width: 48px;
+    height: 60px;
+  }
+
+  .suite-card__name {
+    font-size: 1rem;
+  }
+
+  .suite-card__sub {
+    font-size: 9.5px;
+  }
+
+  .suite-card__rate {
+    font-size: 1rem;
+  }
+
+  .addon-chip {
+    padding: 8px 12px;
+    font-size: 10.5px;
+  }
+
+  .price-summary {
+    padding: 14px;
+  }
+
+  .price-summary__total-val {
+    font-size: 1.35rem;
+  }
+
+  .booking-btn-primary {
+    padding: 0.85rem;
+    font-size: 11px;
   }
 }
 

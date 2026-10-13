@@ -751,6 +751,25 @@
   }
 }
 
+@media (max-width: 600px) {
+  .suites__intro {
+    padding: 70px var(--edge) 30px;
+  }
+
+  .suites__mobile-panel {
+    padding: 36px var(--edge) 48px;
+  }
+
+  .suites__mobile-img {
+    max-height: 50vh;
+  }
+
+  .suites__mobile-specs {
+    gap: 0.4rem;
+    font-size: 11px;
+  }
+}
+
 @media (min-width: 901px) {
   .suites__mobile-stack {
     display: none !important;
